@@ -2,25 +2,37 @@
     <div>
 
       <strong>Sort by:</strong>
-      <label>
-        <input type="radio" value="Alphabetically" checked="null" onChange="null"/>
+      <label for="alphabetically">
+        <input @change="$emit('sort-stock', picked)" type="radio" id="alphabetically" value="Alphabetically" v-model="picked"/>
         Alphabetically
       </label>
-      <label>
-        <input type="radio" value="Price" checked="null" onChange="null"/>
+      <label for="price">
+        <input @change="$emit('sort-stock', picked)" type="radio" id='price' value="Price" v-model="picked"/>
         Price
       </label>
       <br/>
 
       <label>
         <strong>Filter:</strong>
-        <select onChange="null">
-          <option value="Tech">Tech</option>
-          <option value="Sportswear">Sportswear</option>
-          <option value="Finance">Finance</option>
+        <select @change="$emit('filter-stock', filter)" v-model="filter">
+          <option disabled value="">Please select one</option>
+          <option>Tech</option>
+          <option>Sportswear</option>
+          <option>Finance</option>
         </select>
       </label>
 
-
     </div>
 </template>
+
+<script>
+export default {
+  name:"SearchBar",
+  data() {
+    return {
+      picked:'',
+      filter:''
+    }
+  }
+}
+</script>
