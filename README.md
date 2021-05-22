@@ -70,6 +70,20 @@ setting up actions.js
 
 setting up mutations.js
 
+next step is to do a fetch to an api to get the data for the state
+
+First we import mapActions in the App.vue file to get access to the actions file,
+then we add methods which will hold the mapActions to get access to the actions we need,
+then we make a created() to get our stocks info on the page load
+
+Next we build a fetch function in the actions to grab the stocks from the api
+
+After that is built, we need the mutations next to change the state
+
+In mutations we add how the state will change
+
+
+
 
 
 

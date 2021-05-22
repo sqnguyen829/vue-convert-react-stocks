@@ -1,5 +1,7 @@
 export default {
-
+    setStocks: (state, data) => {
+        state.stocks = data
+    }
 }
 
 // The only way to actually change state in a Vuex store is by committing 
