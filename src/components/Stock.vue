@@ -1,8 +1,14 @@
 <template>
-    <div class="card">
+    <div class="card" @click="$emit('handle-stock', stock)">
       <div class="card-body">
-        <h5 class="card-title">{{'Company name'}}</h5>
-        <p class="card-text">{{'ticker: stock price'}}</p>
+        <h5 class="card-title">{{stock.name}}</h5>
+        <p class="card-text">{{`${stock.ticker}:${stock.price}`}}</p>
       </div>
     </div>
 </template>
+
+<script>
+export default {
+  props:["stock", "handle-stock"]
+}
+</script>

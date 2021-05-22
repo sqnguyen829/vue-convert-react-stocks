@@ -1,5 +1,7 @@
 export default {
-
+    getStocks: (state) => {
+        return state.sorting === ''? state.stocks : state.stocks.filter(s => s.type === state.sorting)
+    },
 }
 
 //the getters purpose is to get some sort of data from the state, 

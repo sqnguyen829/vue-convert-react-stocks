@@ -82,10 +82,10 @@ After that is built, we need the mutations next to change the state
 
 In mutations we add how the state will change
 
+I'll build getters later when sort and filter is being used
 
+lets get the updated state of stocks in the StockContainer
 
+After being able to display the stocks on the page, setting up the add stock to my portfolio and so on with the rest of the deliverables
 
-
-
-
-
+the mapGetters was added to StockContainer after setting up the Seasrch bar functionality, but until then it had pull directly from the state of stocks

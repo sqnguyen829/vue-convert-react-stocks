@@ -17,7 +17,6 @@ export default {
     MainContainer
   },
   created() {
-    console.log('hello')
     this.fetchStocks()
   },
   methods: {

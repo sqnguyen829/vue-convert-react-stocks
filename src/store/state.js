@@ -1,3 +1,5 @@
 export default {
-    stocks:[]
+    stocks:[],
+    myStocks:[],
+    sorting:''
 }
