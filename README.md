@@ -48,3 +48,30 @@ After the stocks are fetched, your job is to:
 * allow a user to filter stocks based on the type of the stock.
 
 Best of luck!
+
+
+## Using Vuex
+
+Adding vuex for state management
+
+npm install vuex --save
+
+add store to the main.js file
+
+then create a store folder in the src folder that will contain index, getters, actions, mutations and state. (will add modules later but not needed for this small application)
+
+Starting with the index file first in store, importing all the files into index for usage
+
+setting up initial state in the state.js
+
+setting up getters.js
+
+setting up actions.js
+
+setting up mutations.js
+
+
+
+
+
+
