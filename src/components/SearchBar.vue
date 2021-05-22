@@ -1,38 +1,43 @@
 <template>
     <div>
-
       <strong>Sort by:</strong>
-      <label for="alphabetically">
-        <input @change="$emit('sort-stock', picked)" type="radio" id="alphabetically" value="Alphabetically" v-model="picked"/>
+      <label>
+        <input @change = filterStock(picked) type="radio" id="alphabetically" value="Alphabetically" v-model="picked"/>
         Alphabetically
       </label>
-      <label for="price">
-        <input @change="$emit('sort-stock', picked)" type="radio" id='price' value="Price" v-model="picked"/>
+      <label>
+        <input @change = filterStock(picked) type="radio" id='price' value="Price" v-model="picked"/>
         Price
       </label>
       <br/>
 
       <label>
         <strong>Filter:</strong>
-        <select @change="$emit('filter-stock', filter)" v-model="filter">
-          <option disabled value="">Please select one</option>
-          <option>Tech</option>
-          <option>Sportswear</option>
-          <option>Finance</option>
+        <select @change = sortStock(sortValue) v-model="sortValue">
+          <option value="Tech">Tech</option>
+          <option value="Sportswear">Sportswear</option>
+          <option value="Finance">Finance</option>
         </select>
       </label>
-
     </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   name:"SearchBar",
   data() {
     return {
       picked:'',
-      filter:''
+      sortValue:''
     }
+  },
+  methods:{
+    ...mapActions([
+      'filterStock',
+      'sortStock'
+    ])
   }
 }
 </script>

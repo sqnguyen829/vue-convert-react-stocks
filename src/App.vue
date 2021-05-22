@@ -8,12 +8,21 @@
 <script>
 import Header from './components/Header'
 import MainContainer from './containers/MainContainer'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
   components: {
     Header,
     MainContainer
+  },
+  created() {
+    this.fetchStocks()
+  },
+  methods: {
+    ...mapActions([
+      'fetchStocks'
+    ])
   }
 }
 </script>

@@ -1,20 +1,31 @@
 <template>
     <div>
         <h2>Stocks</h2>
-        <div v-bind:key="stock.id" v-for="stock in stocks">
-          <Stock v-bind:stock="stock" v-on:handle-stock="$emit('add-stock', stock)"/> 
-        </div>
+          <Stock 
+            v-bind:stock="stock" 
+            v-bind:key="stock.id" 
+            v-for="stock in getStocks"
+            v-on:handle-stock="addStock"/>
       </div>
 </template>
 
 <script>
 import Stock from '../components/Stock'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
-  name:"StockContainer",
   components:{
     Stock
   },
-  props:["stocks"],
+  computed: {
+    ...mapGetters([
+      'getStocks'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'addStock'
+    ])
+  }
 }
 </script>

@@ -48,3 +48,44 @@ After the stocks are fetched, your job is to:
 * allow a user to filter stocks based on the type of the stock.
 
 Best of luck!
+
+
+## Using Vuex
+
+Adding vuex for state management
+
+npm install vuex --save
+
+add store to the main.js file
+
+then create a store folder in the src folder that will contain index, getters, actions, mutations and state. (will add modules later but not needed for this small application)
+
+Starting with the index file first in store, importing all the files into index for usage
+
+setting up initial state in the state.js
+
+setting up getters.js
+
+setting up actions.js
+
+setting up mutations.js
+
+next step is to do a fetch to an api to get the data for the state
+
+First we import mapActions in the App.vue file to get access to the actions file,
+then we add methods which will hold the mapActions to get access to the actions we need,
+then we make a created() to get our stocks info on the page load
+
+Next we build a fetch function in the actions to grab the stocks from the api
+
+After that is built, we need the mutations next to change the state
+
+In mutations we add how the state will change
+
+I'll build getters later when sort and filter is being used
+
+lets get the updated state of stocks in the StockContainer
+
+After being able to display the stocks on the page, setting up the add stock to my portfolio and so on with the rest of the deliverables
+
+the mapGetters was added to StockContainer after setting up the Seasrch bar functionality, but until then it had pull directly from the state of stocks
